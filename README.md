@@ -1,6 +1,4 @@
-<img width="200" height="200" alt="NothingSpace_Mockup_1782089812982" src="https://github.com/user-attachments/assets/e4b84214-f6b2-45e9-9393-d1f0af5cf1c3" /> <img width="200" height="200" alt="NothingSpace_Mockup_1782089823724" src="https://github.com/user-attachments/assets/5052e0da-4e3c-48d7-aa47-7c4177dee4bf" /> <img width="200" height="200" alt="NothingSpace_Mockup_1782090227804" src="https://github.com/user-attachments/assets/82b115b5-5e2a-45d6-85b0-4e26c00fed12" /> <img width="200" height="200" alt="NothingSpace_Mockup_1782090237863" src="https://github.com/user-attachments/assets/9c5be718-949a-4bb8-99e3-0e06b5d9924c" />
-
-
+<img width="7804" height="2000" alt="Animated mobile gestures pack (Community) (7)" src="https://github.com/user-attachments/assets/97e2eddd-13f6-4b73-9de0-5d8ded824411" />
 
 # Glyph Torch
 
