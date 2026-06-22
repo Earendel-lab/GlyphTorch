@@ -1,4 +1,4 @@
-<img width="500" height="500" alt="NothingSpace_Mockup_1782089812982" src="https://github.com/user-attachments/assets/e4b84214-f6b2-45e9-9393-d1f0af5cf1c3" /> <img width="500" height="500" alt="NothingSpace_Mockup_1782089823724" src="https://github.com/user-attachments/assets/5052e0da-4e3c-48d7-aa47-7c4177dee4bf" />
+<img width="200" height="200" alt="NothingSpace_Mockup_1782089812982" src="https://github.com/user-attachments/assets/e4b84214-f6b2-45e9-9393-d1f0af5cf1c3" /> <img width="200" height="200" alt="NothingSpace_Mockup_1782089823724" src="https://github.com/user-attachments/assets/5052e0da-4e3c-48d7-aa47-7c4177dee4bf" />
 
 # Glyph Torch
 
