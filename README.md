@@ -1,4 +1,4 @@
-<img width="7804" height="2000" alt="Animated mobile gestures pack (Community) (7)" src="https://github.com/user-attachments/assets/97e2eddd-13f6-4b73-9de0-5d8ded824411" />
+<img width="7804" height="2000" alt="Glyph Torch Banner" src="https://github.com/user-attachments/assets/a1021ad8-5b09-4395-8623-b2b0ae7c0865" />
 
 # Glyph Torch
 
