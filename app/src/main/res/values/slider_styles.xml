@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Glyph Torch — Custom Slider Style: extra thick, capsule, red thumb -->
+    <style name="Widget.GlyphTorch.Slider" parent="Widget.Material3.Slider">
+        <!-- Thumb: always #D71921, large -->
+        <item name="thumbColor">@color/thumb_red</item>
+        <item name="thumbRadius">18dp</item>
+        <item name="thumbElevation">4dp</item>
+        <item name="haloColor">@color/thumb_halo</item>
+        <item name="haloRadius">28dp</item>
+
+        <!-- Track: extra thick, rounded capsule -->
+        <item name="trackHeight">16dp</item>
+
+        <!-- Hide label/value popup -->
+        <item name="labelBehavior">gone</item>
+    </style>
+
+    <!-- Light mode slider track colors -->
+    <style name="Widget.GlyphTorch.Slider.Light" parent="Widget.GlyphTorch.Slider">
+        <item name="trackColorActive">@color/track_active_light</item>
+        <item name="trackColorInactive">@color/track_inactive_light</item>
+    </style>
+
+    <!-- Dark mode slider track colors -->
+    <style name="Widget.GlyphTorch.Slider.Dark" parent="Widget.GlyphTorch.Slider">
+        <item name="trackColorActive">@color/track_active_dark</item>
+        <item name="trackColorInactive">@color/track_inactive_dark</item>
+    </style>
+
+</resources>

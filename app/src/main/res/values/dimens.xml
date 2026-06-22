@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 
+      Overriding MDC dimensions to make the Material 3 Switch natively massive (4x standard size).
+      This prevents the blurriness that happens when using scaleX/scaleY on vector-backed views.
+    -->
+    <dimen name="m3_switch_track_width" tools:override="true">208dp</dimen>
+    <dimen name="m3_switch_track_height" tools:override="true">128dp</dimen>
+    <dimen name="m3_switch_thumb_size" tools:override="true">96dp</dimen>
+    <dimen name="m3_switch_thumb_pressed_size" tools:override="true">112dp</dimen>
+</resources>

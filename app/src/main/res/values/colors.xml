@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Glyph Torch accent — slider thumb -->
+    <color name="thumb_red">#D71921</color>
+    <color name="thumb_halo">#33D71921</color>
+
+    <!-- Slider track colors — Light mode -->
+    <color name="track_active_light">#FF000000</color>
+    <color name="track_inactive_light">#33000000</color>
+
+    <!-- Slider track colors — Dark mode -->
+    <color name="track_active_dark">#FFFFFFFF</color>
+    <color name="track_inactive_dark">#33FFFFFF</color>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    tools:context=".MainActivity">
+
+    <!-- Title text -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="24dp"
+        android:text="Glyph Torch"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="28sp"
+        android:fontFamily="serif" />
+
+    <!-- Custom Big Toggle Component: Avoids all Android UI clipping and coloring bugs -->
+    <FrameLayout
+        android:id="@+id/bigToggleTrack"
+        android:layout_width="256dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center"
+        android:background="@drawable/toggle_track_off"
+        android:clickable="true"
+        android:focusable="true">
+
+        <FrameLayout
+            android:id="@+id/bigToggleThumb"
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/toggle_thumb_off" />
+            
+    </FrameLayout>
+
+    <!-- Custom Shadowless Toast -->
+    <TextView
+        android:id="@+id/customToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/toast_bg"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        android:text="Glyph ON"
+        android:textColor="?android:colorBackground"
+        android:textSize="16sp"
+        android:fontFamily="serif"
+        android:alpha="0"
+        android:elevation="0dp" />
+
+</FrameLayout>
