@@ -9,7 +9,7 @@ Built with the [Nothing Glyph Developer Kit](https://github.com/Nothing-Develope
 - Single master glyph toggle controls all glyph zones
 - Pure monochrome design — AMOLED black / white with red accent
 - Edge-to-edge, Nothing-inspired minimal UI
-- Automatic device detection (Phone 1, 2, 2a, 2a Plus, 3a)
+- Automatic device detection (Phone 1, 2, 2a, 2a Plus, 3a, 3a pro...)
 
 ## Requirements
 
