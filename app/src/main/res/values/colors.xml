@@ -14,4 +14,11 @@
     <!-- Slider track colors — Dark mode -->
     <color name="track_active_dark">#FFFFFFFF</color>
     <color name="track_inactive_dark">#33FFFFFF</color>
+
+    <!-- Toast Backgrounds -->
+    <color name="toast_bg_white">#FFF1F1F1</color>
+    <color name="toast_bg_black">#FF292929</color>
+
+    <!-- Title Colors -->
+    <color name="title_text_off_white">#FFF2F2F2</color>
 </resources>
