@@ -29,8 +29,8 @@
         android:layout_height="128dp"
         android:layout_gravity="center"
         android:background="@drawable/toggle_track_off"
-        android:clickable="true"
-        android:focusable="true">
+        android:clickable="false"
+        android:focusable="false">
 
         <FrameLayout
             android:id="@+id/bigToggleThumb"
@@ -38,7 +38,23 @@
             android:layout_height="104dp"
             android:layout_gravity="center_vertical|start"
             android:layout_marginStart="12dp"
-            android:background="@drawable/toggle_thumb_off" />
+            android:background="@drawable/toggle_thumb_off"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/sosLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="SOS"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:visibility="gone" />
+
+        </FrameLayout>
             
     </FrameLayout>
 

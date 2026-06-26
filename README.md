@@ -2,71 +2,31 @@
 
 # Glyph Torch
 
-A minimal, single toggle utility for Nothing devices. Controls all Glyph LEDs simultaneously with one master toggle.
-
-Built with the [Nothing Glyph Developer Kit](https://github.com/Nothing-Developer-Programme/Glyph-Developer-Kit).
+A minimal, high-performance master toggle for Nothing device Glyph LEDs.
 
 ## Features
 
-- Single master glyph toggle controls all glyph zones
-- Pure monochrome design — AMOLED black / white with red accent
-- Edge-to-edge, Nothing-inspired minimal UI
-- Automatic device detection (Phone 1, 2, 2a, 2a Plus, 3a, 3a pro...)
+- **Master Toggle**: Instant control over all Glyph LEDs.
+- **SOS Mode**: Synchronized Glyph and Flashlight distress signal.
+- **Quick Settings Tile**: Control your torch directly from the notification shade.
+- **Nothing Design**: Pure monochrome, edge-to-edge UI.
 
-## Requirements
+## How to use SOS Mode
 
-- Nothing device on Android 14+ (SDK limitation)
-- Foreground usage only (SDK restriction)
-- Android Studio with AGP 8.11+
+### In-App:
+- While the torch is **OFF**, **long-press** the toggle thumb to activate SOS.
+- Tap the thumb again to turn it off instantly.
+
+### Quick Settings Tile:
+- **Single Tap**: Toggle steady ON/OFF or stop SOS.
+- **Long Press**: Directly activate SOS mode from anywhere.
+
+## Build Requirements
+
+- Nothing device on Android 14+
+- Android Studio Ladybug+
 - JDK 17
+- Nothing Ketchum SDK (`.jar` in `app/libs/`)
 
-## SDK Integration
-
-This project uses the Nothing Glyph Developer Kit:
-
-- Repo: https://github.com/Nothing-Developer-Programme/Glyph-Developer-Kit
-- Download `KetchumSDK_Community_YYYYMMDD.jar` from the `sdk/` folder and place it in `app/libs/`
-- The build already includes `implementation(fileTree(dir: "libs", include: ["*.jar", "*.aar"]))`
-
-### Manifest
-
-```xml
-<uses-permission android:name="com.nothing.ketchum.permission.ENABLE" />
-
-<application>
-    <!-- Use "test" for development, replace with your real API key for production -->
-    <meta-data android:name="NothingKey" android:value="test" />
-</application>
-```
-
-## Build and Run
-
-```bash
-# Build debug APK
-./gradlew :app:assembleDebug
-
-# Install on connected device
-./gradlew :app:installDebug
-```
-
-Enable Glyph SDK debug mode (recommended for development):
-
-```bash
-adb shell settings put global nt_glyph_interface_debug_enable 1
-```
-
-
-## Notes
-
-- SDK only works on Nothing devices on Android 14+
-- Debug mode auto-expires after ~48h
-- Only foreground apps may control glyphs
-
-## Author
-
-Earendel
-
-## Credits
-
-- Nothing Glyph Developer Kit — © Nothing, used under the terms in their repository
-# Glyph-Torch
+---
+Built with the [Nothing Glyph Developer Kit](https://github.com/Nothing-Developer-Programme/Glyph-Developer-Kit).

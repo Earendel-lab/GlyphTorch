@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity(), GlyphHelper.Listener {
 
     private lateinit var track: FrameLayout
     private lateinit var thumb: FrameLayout
+    private lateinit var sosLabel: TextView
     private lateinit var customToast: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,12 +29,22 @@ class MainActivity : AppCompatActivity(), GlyphHelper.Listener {
 
         track = findViewById(R.id.bigToggleTrack)
         thumb = findViewById(R.id.bigToggleThumb)
+        sosLabel = findViewById(R.id.sosLabel)
         customToast = findViewById(R.id.customToast)
         
         GlyphHelper.initIfNeeded(this)
 
-        track.setOnClickListener {
+        thumb.setOnClickListener {
             GlyphHelper.toggle(this)
+        }
+
+        thumb.setOnLongClickListener {
+            if (!GlyphHelper.isGlyphOn) {
+                GlyphHelper.startSOS(this)
+                true
+            } else {
+                false
+            }
         }
     }
 
@@ -48,10 +59,14 @@ class MainActivity : AppCompatActivity(), GlyphHelper.Listener {
         GlyphHelper.removeListener(this)
     }
 
-    override fun onTorchStateChanged(isOn: Boolean) {
+    override fun onTorchStateChanged(isOn: Boolean, isSOS: Boolean) {
         runOnUiThread {
             updateToggleVisuals(animate = true)
-            showCustomToast(if (isOn) "Glyph ON" else "Glyph OFF")
+            if (isSOS) {
+                showCustomToast("SOS ACTIVE")
+            } else {
+                showCustomToast(if (isOn) "Glyph ON" else "Glyph OFF")
+            }
         }
     }
 
@@ -64,12 +79,22 @@ class MainActivity : AppCompatActivity(), GlyphHelper.Listener {
     private fun updateToggleVisuals(animate: Boolean) {
         val density = resources.displayMetrics.density
         val trackWidthPx = 256f * density
-        val thumbWidthPx = 104f * density
+        val thumbWidthPxOn = 104f * density
+        val thumbWidthPxOff = 92f * density // ~12% smaller than 104dp (larger than before)
         val marginPx = 12f * density
         
         val isTorchOn = GlyphHelper.isGlyphOn
+        val isSOS = GlyphHelper.isSOSMode
+
+        sosLabel.visibility = if (isSOS) android.view.View.VISIBLE else android.view.View.GONE
+
+        // Calculate thumb scale and translation
+        val targetScale = if (isTorchOn) 1f else (thumbWidthPxOff / thumbWidthPxOn)
+        
+        // When ON: moves to the end of the track
+        // When OFF: stays at the start (0 translationX)
         val targetTranslationX = if (isTorchOn) {
-            trackWidthPx - thumbWidthPx - (marginPx * 2)
+            trackWidthPx - thumbWidthPxOn - (marginPx * 2)
         } else {
             0f
         }
@@ -77,11 +102,15 @@ class MainActivity : AppCompatActivity(), GlyphHelper.Listener {
         if (animate) {
             thumb.animate()
                 .translationX(targetTranslationX)
+                .scaleX(targetScale)
+                .scaleY(targetScale)
                 .setDuration(250)
                 .setInterpolator(FastOutSlowInInterpolator())
                 .start()
         } else {
             thumb.translationX = targetTranslationX
+            thumb.scaleX = targetScale
+            thumb.scaleY = targetScale
         }
 
         if (isTorchOn) {

@@ -4,6 +4,11 @@
 
     <!-- Required by Nothing Glyph SDK -->
     <uses-permission android:name="com.nothing.ketchum.permission.ENABLE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +34,17 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".SosTriggerActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@style/Theme.AppCompat.Translucent">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".GlyphTileService"
             android:exported="true"
@@ -38,6 +54,15 @@
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
+        </service>
+
+        <service
+            android:name=".GlyphService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Flashlight/Glyph hardware control" />
         </service>
 
     </application>

@@ -42,9 +42,12 @@ class GlyphTileService : TileService(), GlyphHelper.Listener {
         tile.updateTile()
     }
 
-    override fun onTorchStateChanged(isOn: Boolean) {
+    override fun onTorchStateChanged(isOn: Boolean, isSOS: Boolean) {
         val tile = qsTile ?: return
         tile.state = if (isOn) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+            tile.subtitle = if (isSOS) "SOS Mode" else ""
+        }
         tile.updateTile()
     }
 
